@@ -1,8 +1,8 @@
 Package.describe({
   name: 'dispatch:geolocation',
-  version: '1.0.0',
+  version: '1.0.1',
   summary: 'Geolocation status helper functions.',
-  git: 'https://github.com/DispatchMe/meteor-events-pan.git'
+  git: 'https://github.com/DispatchMe/meteor-geolocation.git'
 });
 
 Cordova.depends({
