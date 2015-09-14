@@ -12,6 +12,9 @@ var Status = Geolocation.Status = {
   AVAILABLE: 4
 };
 
+var isAndroid = /android/g.test(navigator.userAgent.toLowerCase());
+var isIos = /(ipad|iphone|ipod)/g.test(navigator.userAgent.toLowerCase());
+
 /**
  * Check for geolocation access.
  * @param callback
@@ -19,7 +22,7 @@ var Status = Geolocation.Status = {
 Geolocation.checkAccess = function (callback) {
   if (!callback) throw 'You must set a callback.';
 
-  if (Platform.isAndroid) {
+  if (isAndroid) {
     // support older app versions
     if (!window.GPSDetector) return callback(Status.ERROR);
 
@@ -37,7 +40,7 @@ Geolocation.checkAccess = function (callback) {
   }, function (error) {
     if (error.message === 'Location services are disabled.') {
       callback(Status.IOS_LOCATION_SERVICES_OFF);
-    } else if (Platform.isIos) {
+    } else if (isIos) {
       callback(Status.IOS_APPLICATION_DOES_NOT_HAVE_PERMISSION);
     } else {
       callback(Status.ERROR);
