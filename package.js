@@ -10,7 +10,9 @@ Cordova.depends({
 });
 
 Package.onUse(function (api) {
-  api.use('dispatch:platform@1.0.0', 'web');
+  api.versionsFrom('1.3');
+
+  api.use('ecmascript', 'web');
 
   api.addFiles('geolocation.js', 'web');
 
