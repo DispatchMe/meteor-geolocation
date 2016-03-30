@@ -1,6 +1,6 @@
 Package.describe({
   name: 'dispatch:geolocation',
-  version: '1.0.4',
+  version: '2.0.0',
   summary: 'Geolocation status helper functions.',
   git: 'https://github.com/DispatchMe/meteor-geolocation.git'
 });
